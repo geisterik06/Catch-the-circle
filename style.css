@@ -1,0 +1,110 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.centered {
+  text-align: center;
+  margin-top: 80px;
+}
+
+#circle, .circle {
+  width: 50px;
+  height: 50px;
+  background-color: crimson;
+  border-radius: 50%;
+  position: absolute;
+  cursor: pointer;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+}
+
+#hud {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-size: 18px;
+  color: #333;
+  z-index: 3;
+}
+
+#gameWrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.field {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#divider {
+  width: 6px;
+  background-color: #333;
+  height: calc(100% - 60px); /* HUD-Höhe abziehen */
+  margin-top: 60px;
+}
+
+@media screen and (orientation: portrait) {
+  body.twoPlayerActive::before {
+    content: "Bitte drehe dein Gerät ins Querformat, um den Zwei-Spieler-Modus zu nutzen.";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f4f8;
+    color: #333;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  #gameWrapper {
+    display: none;
+  }
+
+  #hud {
+    display: none;
+  }
+}
